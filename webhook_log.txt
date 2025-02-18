@@ -1,0 +1,7 @@
+Array
+(
+    [user_id] => 9666655
+    [name] => John Doe j
+    [phone] => 923339009975
+    [message] => Hellokljjkl hi, thisdafs is a test!
+)
