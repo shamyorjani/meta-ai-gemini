@@ -21,7 +21,7 @@ $data = json_decode($inputJSON, true);
 // Check if data is valid
 if ($data) {
     // Log the data to a file (for debugging purposes)
-    file_put_contents('webhook_log.txt', print_r($data, true), FILE_APPEND);
+    file_put_contents('webhook_log.txt', json_encode($data, JSON_PRETTY_PRINT), FILE_APPEND);
 
     // Extract message from the incoming data
     $message = isset($data['entry'][0]['changes'][0]['value']['messages'][0]['text']['body']) ? $data['entry'][0]['changes'][0]['value']['messages'][0]['text']['body'] : 'No message received';
@@ -30,7 +30,7 @@ if ($data) {
         die('Error: User phone number is missing.');
     }
     $messageId = isset($data['entry'][0]['changes'][0]['value']['messages'][0]['id']) ? $data['entry'][0]['changes'][0]['value']['messages'][0]['id'] : ''; // Get the message ID
-
+    
     echo 'Message received successfully!<br>';
     echo 'Message: ' . htmlspecialchars($message);
 
@@ -84,7 +84,7 @@ if ($data) {
 
     // Send a reply message using the WhatsApp API
     $url = 'https://graph.facebook.com/v22.0/541402772396442/messages';
-    $accessToken = 'EAANZAK1f7IrgBO1lHdQ8nCk5KZAeZAZBhXxM8ZAvO86ep1sPRzHD1H8ZAIFTiCoP5NqlN1LG9VBZBnKia7vkHJ7FRUR2RX1jtBXrUeZB6yZCA1bkSMbHmDFKIiUCzZBmgNEkxvW9ioujt7VOTNnt3fYex3QNM8ickof8VCTZAKZCAU6nXr5U3nbGpUCZArV6F49sL4xQMKsCROitQXofkuCEckq4mlQ39te3o';
+    $accessToken = 'EAANZAK1f7IrgBOyFMCBKHHo7oQ7ZBYKdrWaRCgdvhM3TsaDey0AkN7JZAT1tfPxyco7xmN3dnkuN5jwQtgpaZCuFG7yhuCvF5zKUhYLkLr2IxnASj6nhsKedgdd4w2WcljIGf0VKzCAe8ThSFgQxdN4e7P7RMj5RBoZCmdaZCAQYmDPHCbOMVtMoa9Ow1e02GFrR5iZCvZBBisa5hbrygTRKGL91kVsZD';
 
     // Prepare the data for the message
     $responseData = [
@@ -94,7 +94,6 @@ if ($data) {
             'body' => $generatedContent, // Add your own custom message here
         ],
     ];
-
     // Send the message using cURL
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);

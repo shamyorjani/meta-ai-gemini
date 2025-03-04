@@ -1,11 +1,11 @@
 <?php
 
 $url = "https://graph.facebook.com/v22.0/541402772396442/messages";
-$accessToken = "EAANZAK1f7IrgBOycNg0jsgQQ4vxlf7LfB3vczyopU5Wujog44ZBaBdgOkjpLIFkVnRAYpMO3rbOM7P0XopIg0ZBuYsepefxllG9fB8DhFyAPZBeOAWithGZBbR7WEgWZBH8nkuP0Nq5hlOyvhGCFz2JyQVtJZA6Ufd9lEZA7KLKK2ZCDiBnZCBGe8gSJUqFyPzmG6LYjXd290dg5ZC5YQT2Pynh9drYaebZA";
+$accessToken = "EAANZAK1f7IrgBO6ZCrlzZAh9GOD9ElhL0DoR22u4PgKJlZBJlFIobDlMvGPmKo0auxv8l4IC2WsZAuTXrDcFbu4v6X2pc24xZBeEC0ygHV1vpWUBbbxpEZBul1mWZAzlYNctiyTZASvoCIg2VoaarzfxmkpEVZAPuCWVJoIn8cvyrseX29ZCYOHg6IaMpeSzGttlZAjk7ErVARBV5lvxCoE18o8jan5IKH0ZD";
 
 $data = [
     "messaging_product" => "whatsapp",
-    "to" => "923399009975",
+    "to" => "923205404869",
     "type" => "template",
     "template" => [
         "name" => "hello_world",
